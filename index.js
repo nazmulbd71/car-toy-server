@@ -32,6 +32,7 @@ async function run() {
     await client.connect();
     const productsCollection = client.db('carToy').collection('products')
 
+
     app.get('/products', async(req,res)=>{
         const cursor = productsCollection.find()
         const result = await cursor.toArray()
